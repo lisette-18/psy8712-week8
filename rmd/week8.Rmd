@@ -40,3 +40,13 @@ ggplot(week8_tbl, aes(x = mean1_6, y = mean8_10)) +
   geom_smooth(method = "lm", color = "purple") +
   labs(x = "Mean Scores of Q1 - Q6", y = "Mean Scores of Q8 - Q10")
 ```
+
+# **Analysis**
+In the following chunk, a display of the correlation between the two mean scores and asssociated p-value is shown. cor.test() is used given that it will perform a hypothesis test between two variables and their correlation coefficient. 
+```{r, echo = FALSE}
+cor.test(week8_tbl$mean1_6, week8_tbl$mean8_10)
+cor_value <- cor.test(week8_tbl$mean1_6, week8_tbl$mean8_10)$estimate
+cor_value2 <- format(cor_value, digits = 1)
+cor_value2 <- sub("^0", "", sprintf("%.2f", cor_value))
+```
+I observed a correlation of `r cor_value2`. Based on the provided p-value (0.56), I can assume we are using the standard .05 for a cutoff. This then indicates that the results are not statistically significant so there is no significant correlation between the two means.
