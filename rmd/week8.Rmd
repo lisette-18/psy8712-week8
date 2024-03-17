@@ -29,3 +29,14 @@ week8_tbl <- read_csv("../data/week3.csv") %>%
   mutate(mean1_6 = rowMeans(across(q1:q6)),
          mean8_10 = rowMeans(across(q8:q10)))
 ```
+
+# **Visualization**
+In the following chunk, display paginated data from Q1-Q6 and display a scatterplot between mean scores of Q1 - Q6 and mean scores of Q8 - Q10. Updated YAML header to display paginated data, used select to choose the columns included using paste0 (so the syntax is reproducible if other columns were to be added) and ggplot with geom_point (i.e., allows for the creation of the scatterplot with appropriate x and y labs, as well as the OLS regression line).
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+select(week8_tbl, paste0("q",1:6))
+
+ggplot(week8_tbl, aes(x = mean1_6, y = mean8_10)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "purple") +
+  labs(x = "Mean Scores of Q1 - Q6", y = "Mean Scores of Q8 - Q10")
+```
