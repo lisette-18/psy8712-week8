@@ -50,3 +50,12 @@ cor_value2 <- format(cor_value, digits = 1)
 cor_value2 <- sub("^0", "", sprintf("%.2f", cor_value))
 ```
 I observed a correlation of `r cor_value2`. Based on the provided p-value (0.56), I can assume we are using the standard .05 for a cutoff. This then indicates that the results are not statistically significant so there is no significant correlation between the two means.
+
+# **Data Export**
+In the following chunk, a smaller version of the dataset is created for use with the shiny app development. The following variables were selected based on the desired display output for the app.
+```{r}
+week8_tbl %>%
+ select(mean1_6, mean8_10, gender, timeEnd) %>%
+  saveRDS("../shiny/shiny_week8/shiny_data.rds")
+```
+
