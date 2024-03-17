@@ -1,15 +1,15 @@
 ---
 title: "PSY 8712 Week 8 Project"
 author: "Lisette Horne"
-date: "2024-03-15"
+date: "2024-03-17"
 output: 
   html_document:
     df_print: paged
 ---
 # **Reproducible Image and Online Resources**
-An image of this project as of *`r Sys.Date()`* can be accessed by <url>
+An image of this project as of *`r Sys.Date()`* can be accessed by [clicking this link] <>
 
-An interactive web app is available by <url>
+An interactive web app is available by [clicking this link instead](https://lisette-18.shinyapps.io/shiny_week8/)
 
 # **Script Settings and Resources**
 ```{r, message = FALSE}
