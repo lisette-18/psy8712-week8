@@ -56,6 +56,6 @@ In the following chunk, a smaller version of the dataset is created for use with
 ```{r}
 week8_tbl %>%
  select(mean1_6, mean8_10, gender, timeEnd) %>%
-  saveRDS("../shiny/shiny_week8/shiny_data.rds")
+  saveRDS("../shiny_week8/shiny_data.rds")
 ```
 
