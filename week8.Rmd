@@ -1,8 +1,0 @@
----
-title: "PSY 8712 Week 8 Project"
-author: "Lisette Horne"
-date: "2024-03-15"
-output: 
-  html_document:
-    df_print: paged
----

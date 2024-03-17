@@ -1,0 +1,19 @@
+---
+title: "PSY 8712 Week 8 Project"
+author: "Lisette Horne"
+date: "2024-03-15"
+output: 
+  html_document:
+    df_print: paged
+---
+# **Reproducible Image and Online Resources**
+An image of this project as of *`r Sys.Date()`* can be accessed by <url>
+
+An interactive web app is available by <url>
+
+# **Script Settings and Resources**
+```{r, message = FALSE}
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(rsconnect)
+library(tidyverse)
+```
