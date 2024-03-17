@@ -17,3 +17,15 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(rsconnect)
 library(tidyverse)
 ```
+
+# **Data Import and Cleaning**
+In the following chunk, the dataset is imported and cleaned for analysis. timeStart is converted to a POSIXct (i.e., the appropriate format for time), gender and condition are converted to factors with their respective levels and labels (i.e., will allow us to develop our graphs), question 5 is reverse coded, and the mean across rows for Q1-Q6, and the mean across rows Q8-10 are calculated (i.e., all which allows us to analyze the data in the following sections).
+```{r, warning=FALSE, message = FALSE}
+week8_tbl <- read_csv("../data/week3.csv") %>%
+  mutate(timeStart = ymd_hms(timeStart)) %>% 
+  mutate(condition = factor(condition, levels = c("A","B","C"), labels = c("Block A", "Block B", "Contol"))) %>%
+  mutate(gender = factor(gender, levels = c("M", "F"), labels = c("Male", "Female"))) %>%
+  mutate(q5 = 6-q5) %>%
+  mutate(mean1_6 = rowMeans(across(q1:q6)),
+         mean8_10 = rowMeans(across(q8:q10)))
+```
